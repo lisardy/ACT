@@ -1,5 +1,6 @@
 # This is a sample Python script.
 import flask_app
+import data.data_controller as data_controller
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
@@ -19,6 +20,8 @@ def print_hi(name):
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     print_hi('PyCharm')
+    item_interface = data_controller.get_item_interface()
+    item_interface.get_items()
     flask_app.run()
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
