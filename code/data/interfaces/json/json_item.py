@@ -1,4 +1,7 @@
-class VulnerabilityItem:
+from data.vulnerability_item import VulnerabilityItem
+
+
+class JsonItem(VulnerabilityItem):
     probability = None
     cvvs_base_score = None
 

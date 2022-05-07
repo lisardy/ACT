@@ -1,6 +1,6 @@
 import json
 from data.interfaces.item_interface import DataInterface
-from data.item import VulnerabilityItem
+from data.interfaces.json.json_item import JsonItem
 
 JSON_DEFAULT = ("data/Vulnerability_data.json")
 
@@ -36,7 +36,7 @@ class JsonReader(DataInterface):
                 print(line)
 
             for data in json_data['items']:
-                item = VulnerabilityItem(data)
+                item = JsonItem(data)
                 items.append(item)
         except FileNotFoundError:
             print("File not found")
