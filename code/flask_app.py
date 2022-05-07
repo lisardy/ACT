@@ -14,5 +14,10 @@ def run():
 
 
 @app.route("/")
-def home():
-    return render_template("index.html")
+@app.route("/dashboard")
+def show_dashboard():
+    return render_template("dashboard.html")
+
+@app.route("/vulnerabilities")
+def show_vulnerabilities():
+    return render_template("vulnerabilities.html")
