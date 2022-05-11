@@ -15,3 +15,12 @@ class DataInterface:
 
     def get_item_count(self):
         raise NotImplementedError
+
+    def get_high_probability_count(self):
+        raise NotImplementedError
+
+    def get_medium_probability_count(self):
+        raise NotImplementedError
+
+    def get_low_probability_count(self):
+        raise NotImplementedError

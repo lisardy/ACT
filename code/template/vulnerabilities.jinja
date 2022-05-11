@@ -1,0 +1,35 @@
+{% extends 'web_format.jinja' %}
+{% set active_page = "vulnerabilities" %}
+{% block content %}
+<br>
+<h3>{% block title %}Vulnerabilities{% endblock %}</h3>
+<br><br>
+
+<div class="container">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Severity</th>
+        <th scope="col">Probability</th>
+        <th scope="col">Last Detected</th>
+      </tr>
+    </thead>
+
+  <tbody>
+    {% for vulnerability in vulnerabilities %}
+        <tr>
+          <th scope="row">{{ vulnerability.name }}</th>
+          <td>{{ vulnerability.description }}</td>
+          <td>{{ vulnerability.cvvs_base_score }}</td>
+          <td>{{ vulnerability.probability }}</td>
+          <td>{{ vulnerability.last_detected_at }}</td>
+        </tr>
+    {% endfor %}
+  </tbody>
+  </table>
+</div>
+
+{% endblock %}
+<!DOCTYPE html>

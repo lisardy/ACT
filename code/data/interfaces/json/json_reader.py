@@ -32,8 +32,8 @@ class JsonReader(DataInterface):
 
             # Iterating through the json
             # list
-            for line in json_data:
-                print(line)
+            #for line in json_data:
+                #print(line)
 
             for data in json_data['items']:
                 item = JsonItem(data)
@@ -54,3 +54,30 @@ class JsonReader(DataInterface):
     """
     def get_items(self):
         return self.get_items_from_file(self.json_file)
+
+    def get_high_probability_count(self):
+        count = 0
+
+        for item in self.get_items():
+            if item.probability == "4.0-high":
+                count+=1
+
+        return count
+
+    def get_medium_probability_count(self):
+        count = 0
+
+        for item in self.get_items():
+            if item.probability == "3.0-medium":
+                count += 1
+
+        return count
+
+    def get_low_probability_count(self):
+        count = 0
+
+        for item in self.get_items():
+            if item.probability == "2.0-low":
+                count += 1
+
+        return count
